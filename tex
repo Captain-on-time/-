@@ -1,0 +1,202 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\begin{document}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(Nesobstvennyi\ integral\ 2\ roda\ \int_{0}^{1}\frac{\text{arctg}\ x}{x^{\alpha}}\text{dx}\)
+\end{enumerate}
+
+\[f\left( x \right) = \frac{\text{arctg}\ x}{x^{\alpha}} > 0,\ x \in \lbrack 0;1\rbrack\backslash n\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Графики подынтегральной функции при разных значениях параметра на
+  исследуемом промежутке:
+\end{enumerate}
+
+При \(\alpha = - 1\):
+
+\includegraphics[width=3.21875in,height=3.20241in]{media/image1.png}
+
+\begin{quote}
+При \(\alpha = 0\):
+
+\includegraphics[width=3.09375in,height=3.07784in]{media/image2.png}
+\end{quote}
+
+При \(\alpha = 1\):
+
+\includegraphics[width=2.76378in,height=2.77083in]{media/image3.png}
+
+При \(\alpha = 2\):
+
+\includegraphics[width=2.80208in,height=2.76042in]{media/image4.png}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Лёгкое определение первообразной (при \(\alpha = 0\))
+\end{enumerate}
+
+\emph{Интегрируем по частям:}
+
+\[\int_{}^{}{fg^{'} = fg - \int_{}^{}{f'g}},\ \ gde\ f = arctg\ x,\ \ g = x\]
+
+\[\int_{0}^{1}\frac{\text{arctg}\ x}{1}\text{dx} = x \bullet arctg\ x - \int_{}^{}{\frac{x}{x^{2} + 1}\text{dx}} = x \bullet arctg\ x - \frac{\ln\left( x^{2} + 1 \right)}{2} + C = x \bullet arctg\ x - \ln\sqrt{x^{2} + 1} + C\ \]
+
+\[\int_{}^{}{\frac{x}{x^{2} + 1}\text{dx}} = \frac{1}{2}\int_{}^{}{\frac{1}{u}du = \frac{ln(u)}{2} = \frac{ln(x^{2} + 1)}{2},\ \ u = x^{2} + 1}\]
+
+\emph{Исследуем сходимость:}
+
+\[x \rightarrow + 0\ :\ f(x) \rightarrow 0\]
+
+\(x \rightarrow 1\ :\ f\left( x \right) \rightarrow \frac{\pi}{4}\)
+значит, в \(x = 1\) функция терпит бесконечный разрыв (неограниченно
+возрастает).\\
+Используем 1 признак сравнения:
+
+\[0 < arctg\ x < \frac{1}{x},\ \ dlia\ \forall x \in \lbrack 0;1)\]
+
+\(\int_{0}^{1}{\frac{\text{dx}}{x}\ \left( p = 1 \right)}\) сходится,
+значит, \(\int_{0}^{1}\frac{\text{arctg}\ x}{1}\text{dx}\) сходится.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Признаки сходимости несобственных интегралов второго рода
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Если на полуинтервале \(\left\lbrack a;b \right)\) функции
+  \(f\left( x \right)\ i\ g\left( x \right)\) непрерывны, удовлетворяют
+  условию \(0 \leq f(x) \leq g\left( x \right)\)и при \(x = b\) терпят
+  бесконечный разрыв, тогда из сходимости интеграла
+  \(\int_{a}^{b}{g\left( x \right)\text{dx}}\) следует сходимость
+  интеграла \(\int_{a}^{b}{f\left( x \right)\text{dx}}\), а из
+  расходимости интеграла \(\int_{a}^{b}{f\left( x \right)\text{dx}}\)
+  следует расходимость интеграла
+  \(\int_{a}^{b}{g\left( x \right)\text{dx}}\).
+\item
+  Пусть функции \(f\left( x \right)\ i\ g\left( x \right)\) непрерывны
+  на полуинтервале \(\left\lbrack a;b \right)\) и терпят разрыв в точке
+  при \(x = b\). Если существует предел
+  \(\operatorname{}\frac{f(x)}{g(x)} = k\ (0 < k < \infty,\ f\left( x \right) > 0\ i\ g\left( x \right) > 0)\),
+  то интегралы
+  \(\int_{a}^{+ \infty}{f\left( x \right)\text{dx}}i\int_{a}^{+ \infty}{g\left( x \right)\text{dx}}\)
+  одновременно оба сходятся или оба расходятся.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Сравнение исходного интеграла
+\end{enumerate}
+
+Трансцендентная функция \(f\left( x \right) = arctg\ x\) ограничена
+сверху и снизу интервалом
+\(\left\lbrack \frac{\pi}{2};\frac{\pi}{2} \right\rbrack.\ \)Это значит,
+что функция может как сходиться, так и расходиться. В этом случае мы
+используем частный признак сравнения несобственных интегралов, то есть
+интеграл \(\int_{a}^{b}\frac{1}{x^{\beta}}\) с параметром \(\beta\),
+величина которого обуславливает поведение исходного интеграла в смысле
+сходимости и расходимости.
+
+Так, мы имеем
+\(\int_{a}^{b}\frac{1}{x^{\beta}} = \operatorname{}{\int_{a}^{b}{x^{- \beta}dx = \operatorname{}{(\frac{x^{1 - \beta}}{1 - \beta})}_{a}^{b}}}\).\\
+Значит, при \(\beta > 1\) интеграл сравнения и исходный интегралы
+расходятся, а при \(\beta \leq 1\) сходятся.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Использование полученного в п.3 интеграла для сравнения
+\end{enumerate}
+
+\begin{quote}
+Пусть \(\alpha = - 2\), тогда
+\(f\left( x \right) = \frac{\text{arctg}\ x}{x^{- 2}}\).
+\end{quote}
+
+\[x \rightarrow + 0\ :\ f(x) \rightarrow 0\]
+
+\begin{quote}
+\(x \rightarrow 1\ :\ f\left( x \right) \rightarrow \frac{\pi}{4}\)
+значит, в \(x = 1\) функция терпит бесконечный разрыв (неограниченно
+возрастает).\\
+Используем 1 признак сравнения:
+\end{quote}
+
+\[0 < arctg\ x \bullet x^{2} < \text{arctg\ x},\text{\ \ }dlia\ \forall x \in \lbrack 0;1)\]
+
+\begin{quote}
+\(\int_{0}^{1}\text{arctg\ x}\text{dx}\) сходится, значит,
+\(\int_{0}^{1}\frac{\text{arctg}\ x}{x^{- 2}}\text{dx}\) сходится.
+
+Проверим по графику:
+
+\includegraphics[width=2.71875in,height=2.60711in]{media/image5.png}
+\end{quote}
+
+\end{document}
